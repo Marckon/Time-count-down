@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            show();
+        }
+            function show() {
+                var block = document.getElementsByTagName("div")[0];
+                var now = new Date();
+                var goal = new Date(2017, 8, 5, 0, 0, 0);
+                var lefttime = goal.getTime() - now.getTime();
+                var day = Math.ceil(lefttime / (24 * 60 * 60 * 1000));
+                var hour = Math.ceil(lefttime / (60 * 60 * 1000) % 24);
+                var min = parseInt(lefttime / (60 * 1000) % 60);
+                var sec = parseInt(lefttime / 1000 % 60);
+                block.innerHTML = '距老妈生日还有' + day + '天' + hour + '时' + min + '分' + sec + '秒';
+                setTimeout(show, 500);
+            }
+
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
